@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "login";
+}
+
+<h2> log In</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <form class="mx-auto" method="Post" action="@Url.Action("Index","login")">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="text-center">Email address</label>
+                    <input type="email" name="Email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="text-center">Password</label>
+                    <input type="password" name="Password" class="form-control " id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success my-4"
+                            >
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
