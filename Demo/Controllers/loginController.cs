@@ -20,18 +20,18 @@ namespace Demo.Controllers
         {
             return View();
         }
-        [HttpPost]
         [ValidateAntiForgeryToken]
+        [HttpPost]
         public ActionResult Index(User user)
         {
             var model = ie.GetOne(user);
-            var CurrentEmail = user.Email;
-            if (CurrentEmail == model.Email)
+            var CurrentPassword = user.Password;
+            if (CurrentPassword == model)
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home", user);
+               // return RedirectToAction("","",)
             }
             return View();
-            
         }
     }
 }

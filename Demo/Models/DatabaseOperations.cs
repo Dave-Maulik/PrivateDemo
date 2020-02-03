@@ -18,10 +18,10 @@ namespace Demo.Models
             Db.SaveChanges();
         }
 
-        public User GetOne(User user)
+        public string GetOne(User user)
         {
-            var data = Db.Details.Find(user.id);
-            return data;
+            var data = Db.Details.FirstOrDefault(u => u.Password == user.Password);
+            return data.Password;
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Demo.Models
     {
         void AddUser(User user);
 
-        User GetOne(User user);
+        string GetOne(User user);
     }
 }
